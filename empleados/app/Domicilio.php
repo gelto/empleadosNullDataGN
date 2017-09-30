@@ -5,11 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Empleado extends Authenticatable
+class Domicilio extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'Empleados';
+    protected $table = 'Domicilios';
 
     /**
      * The attributes that are mass assignable.
@@ -17,10 +17,6 @@ class Empleado extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre', 'email', 'fechaNacimiento'
+        'alias', 'domicilio', 'lat', 'lon',
     ];
-
-    public function Domicilios(){
-        return $this->hasMany('App\Domicilio');
-    }
 }

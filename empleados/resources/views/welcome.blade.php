@@ -31,6 +31,7 @@
       </div>
     </nav>
 
+
     <div class="container">
 
       <br>
@@ -40,15 +41,21 @@
       
       @foreach($empleados as $empleado)
       <div class="row">
-        <div class="col-3 text-right">{{$empleado->nombre}}</div>
-        <div class="col-3 text-right">{{$empleado->email}}</div>
-        <div class="col-3 text-right">{{$empleado->fechaNacimiento}}</div>
+        <div class="col-3 text-left">{{$empleado->nombre}}</div>
+        <div class="col-3 text-left">{{$empleado->email}}</div>
+        <div class="col-3 text-left">{{$empleado->fechaNacimiento}}</div>
       </div>
-      <div class="row">
-        <div class="col-3 text-right">&nbsp;</div>
-        <div class="col-3 text-right">&nbsp;</div>
-        <div class="col-3 text-right">@if($empleado->lat != 0) <a target="_blanck" href="https://www.google.com.mx/maps/@<?php echo $empleado->lat; ?>,{{$empleado->lon}},15z">ubicación</a> @else sin ubicación @endif</div>
-      </div>
+      <br>
+          @if(count($empleado->Domicilios)>0)
+          @foreach($empleado->Domicilios as $domicilio)
+          <div class="row">
+            <div class="col-3 text-left">{{$domicilio->alias}}</div>
+            <div class="col-6 text-left">{{$domicilio->domicilio}}</div>
+            <div class="col-3 text-left">@if($domicilio->lat != 0) <a target="_blanck" href="https://www.google.com.mx/maps/@<?php echo $domicilio->lat; ?>,{{$domicilio->lon}},15z">ubicación</a> @else sin ubicación @endif</div>
+          </div>
+          @endforeach
+          @endif
+      <br>
       <hr>
       @endforeach
 

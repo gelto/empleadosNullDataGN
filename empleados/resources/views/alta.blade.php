@@ -59,16 +59,65 @@
       </div>
       <br>
 
-      <div class="row">
-        <div class="col-3 text-right">Latitud</div>
-        <div class="col-9"><input type="text" class="lat" style="display:table-cell; width:50%"></div>
+      <div class="domicilios">
+        <div class="domicilioDatos">
+          <div class="row">
+            <div class="col-3 text-right">Domicilio (alias)</div>
+            <div class="col-4"><input type="text" class="alias" placeholder="alias" style="display:table-cell; width:50%"></div>
+          </div><br>
+          <div class="row">
+            <div class="col-3 text-right">Domicilio</div>
+            <div class="col-9"><input type="text" class="domicilio" placeholder="dirección" style="display:table-cell; width:50%"></div>
+          </div><br>
+          <div class="row">
+            <div class="col-3 text-right">Latitud</div>
+            <div class="col-9"><input type="text" class="lat" style="display:table-cell; width:50%"></div>
+          </div><br>
+          <div class="row">
+            <div class="col-3 text-right">Longitud</div>
+            <div class="col-9"><input type="text" class="lon" style="display:table-cell; width:50%"></div>
+          </div><br>
+          <div class="row">
+            <div class="col-11 text-right">Agrergar dirección</div>
+            <div class="col-1"><input type="button" class="agregar" value="+"></div>
+          </div>
+            <br>
+            <br>
+        </div>
       </div>
-      <br>
+        
 
-      <div class="row">
-        <div class="col-3 text-right">Longitud</div>
-        <div class="col-9"><input type="text" class="lon" style="display:table-cell; width:50%"></div>
+      
+        <!-- fila a clona para agregar domicilio-->
+        <div class="domicilioDatos clone" style="display:none;">
+          <div class="row">
+            <div class="col-3 text-right">Domicilio (alias)</div>
+            <div class="col-4"><input type="text" class="alias" placeholder="alias" style="display:table-cell; width:50%"></div>
+          </div><br>
+          <div class="row">
+            <div class="col-3 text-right">Domicilio</div>
+            <div class="col-9"><input type="text" class="domicilio" placeholder="dirección" style="display:table-cell; width:50%"></div>
+          </div><br>
+          <div class="row">
+            <div class="col-3 text-right">Latitud</div>
+            <div class="col-9"><input type="text" class="lat" style="display:table-cell; width:50%"></div>
+          </div><br>
+          <div class="row">
+            <div class="col-3 text-right">Longitud</div>
+            <div class="col-9"><input type="text" class="lon" style="display:table-cell; width:50%"></div>
+          </div><br>
+          <div class="row">
+            <div class="col-11 text-right">Agrergar dirección</div>
+            <div class="col-1"><input type="button" class="agregar" value="+"></div>
+          </div>
+            <br>
+            <br>
+        </div>
+        <!-- fila a clona para agregar domicilio fin-->
+        
       </div>
+
+      
       <br>
       
       <div class="row">
@@ -88,5 +137,6 @@
 
     <script src="/js/peticiones.js"></script>
     <script src="/js/validador.js"></script>
+    <script src="/js/domicilios.js"></script>
   </body>
 </html>

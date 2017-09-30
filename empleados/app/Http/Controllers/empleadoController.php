@@ -9,6 +9,7 @@ use App\Http\Requests;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Empleado;
+use App\Domicilio;
 
 class empleadoController extends Controller
 {
@@ -54,10 +55,20 @@ class empleadoController extends Controller
 	    	$empleado->nombre = $nombre;
 	    	$empleado->email = $email;
 	    	$empleado->fechaNacimiento = $fecha;
-	    	$empleado->lat = $lat;
-	    	$empleado->lon = $lon;
 
 	    	$empleado->save();
+
+	    	$indice = 0;
+	    	foreach($vars['alias'] as $alias){
+	    		$domicilio = new Domicilio();
+	    		$domicilio->empleado_id = $empleado->id;
+	    		$domicilio->alias = $vars['alias'][$indice];
+	    		$domicilio->domicilio = $vars['domicilio'][$indice];
+	    		$domicilio->lat = $vars['lat'][$indice];
+	    		$domicilio->lon = $vars['lon'][$indice];
+	    		$domicilio->save();
+	    		$indice++;
+	    	}
 
 	    	$respuesta['status'] = "ok";
       		$respuesta['clase'] = "";

@@ -16,6 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `domicilios`
+--
+
+DROP TABLE IF EXISTS `domicilios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `domicilios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `empleado_id` int(11) DEFAULT NULL,
+  `domicilio` varchar(200) DEFAULT NULL,
+  `alias` varchar(45) DEFAULT NULL,
+  `lat` varchar(45) DEFAULT NULL,
+  `lon` varchar(45) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `domicilios`
+--
+
+LOCK TABLES `domicilios` WRITE;
+/*!40000 ALTER TABLE `domicilios` DISABLE KEYS */;
+INSERT INTO `domicilios` VALUES (1,1,'avenida de los maestros','casa','19.4614204','-99.1622213','2017-09-30 19:54:54','2017-10-01 00:54:54'),(2,1,'monte pelvoux','trabajo','19.425149','-99.2066977','2017-09-30 19:54:54','2017-10-01 00:54:54');
+/*!40000 ALTER TABLE `domicilios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `empleados`
 --
 
@@ -27,8 +57,6 @@ CREATE TABLE `empleados` (
   `nombre` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `fechaNacimiento` date DEFAULT NULL,
-  `lat` varchar(45) DEFAULT NULL,
-  `lon` varchar(45) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -41,7 +69,7 @@ CREATE TABLE `empleados` (
 
 LOCK TABLES `empleados` WRITE;
 /*!40000 ALTER TABLE `empleados` DISABLE KEYS */;
-INSERT INTO `empleados` VALUES (1,'Germán','luisgnava@gmail.com','1982-08-12','19.4614204','-99.1622213','2017-09-30 17:29:43','2017-09-30 22:29:43');
+INSERT INTO `empleados` VALUES (1,'Germán Nava','luisgnava@gmail.com','1982-08-12','2017-09-30 19:54:54','2017-10-01 00:54:54');
 /*!40000 ALTER TABLE `empleados` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-30 13:13:49
+-- Dump completed on 2017-09-30 14:56:48
